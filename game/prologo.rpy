@@ -1,5 +1,6 @@
 
 label prologo:
+    define nombre_yo="Yo"
     window hide
 
     play music musicaIntro fadein 1.0
