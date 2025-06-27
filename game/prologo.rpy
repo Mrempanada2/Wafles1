@@ -1,6 +1,7 @@
 
 label prologo:
-    define nombre_yo="Yo"
+
+    #define nombre_yo="Yo"
     window hide
 
     play music musicaIntro fadein 1.0
@@ -29,6 +30,7 @@ label prologo:
     yo "Que?"
     pause 0.1
     stop music
+    scene black
     $ renpy.movie_cutscene(videoExplosion, stop_music=True)
 
     scene goku
@@ -49,20 +51,17 @@ label prologo:
         "por donde vas?"
         "Izquerda de la mesa":
             $ tiempo_perdido = True
-            scene Agua1
             "Es mejor irse a la segura a que caerse o algo"
-            scene izquerdaAgua
-            pause 1.0
-            scene blackout
+            scene blackout with fade
+            $ renpy.movie_cutscene("video/cocinaIzquerda.ogv")
+            pause 0.3
+            scene blackout with fade
             play sound tomarAgua
             "Tomas agua y te devuelves por el camino mas corto"
-            stop sound
-            play sound pasosRapidos
+            ###
+            play sound gmodDeath volume 0.8
             "Tan apurado te ibas a acostar que te pegas en la esquina de la mesa"
-            stop music
             stop sound
-            $ renpy.movie_cutscene(videocaida, stop_music=True)
-            play sound gmodDeath
             scene stunned with fade
             "Te caiste de hocico"
 
@@ -70,18 +69,12 @@ label prologo:
 
         "Derecha de la mesa":
             $ tiempo_perdido = False
-            scene Agua1
             "Así llegas mas rapido porque eres un flojo igual"
-            scene derechaAgua
-            pause 1.0
-            scene blackout
-            play sound pasosRapidos
-            "Vas llegando de memoria pero"
-            stop music
-            stop sound
-            $ renpy.movie_cutscene(videocaida, stop_music=True)
-            play sound gmodDeath
+            scene blackout with fade
+            $ renpy.movie_cutscene("video/cocinaDerecha.ogv")
             scene stunned with fade
-            "Te pegaste en el dedo meñique del pie con la mesa y te caiste de hocico"
+            play sound gmodDeath volume 0.8
+            "Te pegaste en el dedo meñique del pie con la mesa y te caiste de hocico"  
+            stop sound       
 
             jump cap1

@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/prologo.rpy", line 49: expected statement.
-    tiempo_perdido = True
-                   ^
-
-File "game/prologo.rpy", line 68: expected statement.
-    tiempo_perdido = False
-                   ^
+File "game/personajes.rpy", line 31: invalid syntax
+    define mute=False
+            ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Sun Jun  8 01:02:12 2025
+Fri Jun 27 02:02:50 2025

@@ -1,40 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/capitulo1.rpy", line 10, in script
-    play music musicaAldea fadein 1.0
-  File "renpy/common/000statements.rpy", line 124, in execute_play_music
-    renpy.music.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 33, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "game/capitulo1.rpy", line 10, in <module>
-    play music musicaAldea fadein 1.0
-NameError: name 'musicaAldea' is not defined
+  File "game/capitulo1.rpy", line 42, in script
+    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
+  File "game/capitulo1.rpy", line 42, in <module>
+    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
+TypeError: hablar() missing 1 required positional argument: 'mute'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/capitulo1.rpy", line 10, in script
-    play music musicaAldea fadein 1.0
-  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1987, in execute
-    self.call("execute")
-  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1966, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\statements.py", line 374, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 124, in execute_play_music
-    renpy.music.play(_audio_eval(p["file"]),
-  File "renpy/common/000statements.rpy", line 33, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\python.py", line 1218, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\python.py", line 1211, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/capitulo1.rpy", line 10, in <module>
-    play music musicaAldea fadein 1.0
-NameError: name 'musicaAldea' is not defined
+  File "game/capitulo1.rpy", line 42, in script
+    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
+  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/capitulo1.rpy", line 42, in <module>
+    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
+TypeError: hablar() missing 1 required positional argument: 'mute'
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Proj1 Beta 0.1
-Mon Jun  9 00:37:06 2025
+Fri Jun 27 02:05:12 2025

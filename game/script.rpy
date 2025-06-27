@@ -1,8 +1,9 @@
 ﻿#Script principal
 
-default tiempo_perdido = True
+
 
 label start:
+    define tiempo_perdido = True
     jump prologo
     return
     
