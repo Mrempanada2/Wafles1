@@ -1,26 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/capitulo1.rpy", line 42, in script
-    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
-  File "game/capitulo1.rpy", line 42, in <module>
-    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
-TypeError: hablar() missing 1 required positional argument: 'mute'
+  File "game/capitulo2.rpy", line 358, in script
+    jump cap3
+ScriptError: could not find label 'cap3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/capitulo1.rpy", line 42, in script
-    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
-  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/capitulo1.rpy", line 42, in <module>
-    $ hablar(yo,"yo Neutro","Pero que me acaba de pasar!")
-TypeError: hablar() missing 1 required positional argument: 'mute'
+  File "game/capitulo2.rpy", line 358, in script
+    jump cap3
+  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\ast.py", line 1712, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\samue\Downloads\renpy-8.3.7-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'cap3'.
 
 Windows-10-10.0.26100 AMD64
 Ren'Py 8.3.7.25031702
 Proj1 Beta 0.1
-Fri Jun 27 02:05:12 2025
+Fri Jun 27 20:46:34 2025

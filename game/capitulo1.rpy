@@ -251,6 +251,7 @@ label finalMalo1:
     scene black with fade
     "Dejas de existir en este universo sin conocer sus misterios"
     "No te resistas a los asaltos :V"
+    "FIN"
     return
 
 label finalMalo2:
@@ -260,6 +261,7 @@ label finalMalo2:
     $ hablar(CriaturaCorrupta,"monstruo uno","*Lenguaje incomprensible*")
     "Te terminan capturando y no pudiste ni salvar al doctor Emmet ni tampoco a tí"
     "Te hace falta mas actitud!"
+    "FIN"
     return
 
 

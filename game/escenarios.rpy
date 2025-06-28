@@ -25,16 +25,24 @@ image viajeportal=Movie(play="video/viajePortal.webm", loop=True, size=(1280,720
 
 #cap2
 image caseta="images/caseta1.png"
-image casetaTormenta=Movie("video/casetaTormenta1.webm",loop=True, size=(1280, 720))
+image casetaTormenta=Movie(play="video/casetaTormenta1.webm",loop=True, size=(1280, 720))
 image casetaNoche="images/caseta2.png"
 
 image exteriorDesierto1="images/extDesierto1.png"
 image exteriorDesierto2="images/extDesierto2.png"
-image exteriorDesierto3="images/extDesierto3.png"##
+image exteriorDesierto3="images/extDesierto3.png"
+image exteriorDesierto3Deform=Movie(play="video/portalDesierto3.webm",loop=True, size=(1280, 720))
+image salaPlan=Movie(play="video/salaPlan.webm",loop=True, size=(1280, 720))
+image casetaAlt1=Movie(play="video/casetaAlt.webm",loop=True, size=(1280, 720))
 
-image exteriorDesierto3Deform=("video/portalDesierto3.webm",loop=True, size=(1280, 720))
-image salaPlan=Movie("video/salaPlan.webm",loop=True, size=(1280, 720))
+#cap3
+image infierno1="images/inferno1.png"
+image infierno2=Movie(play="video/inferno2.webm", loop=True, size=(1280, 720))
+image infierno3="images/inferno3.png"
 
-image casetaAlt1=Movie("video/casetaAlt.webm",loop=True, size=(1280, 720))##
+image equipo0="images/cuchillo.png"
+image equipo1="images/Magnum.png"
+image equipo2="images/Rifle.png"
+image equipo3="images/Sniper.png"
 
 

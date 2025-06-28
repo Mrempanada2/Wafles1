@@ -18,8 +18,8 @@ label cap2:
     "Estas en medio del desierto y parece ser un puesto de investigación"
     yo"Dooooc donde estás?"
     $ hablar(yo,"yo Neutro","Doc, estás por ahí?")
-    ####Sonido radio llamando
-
+    play sound radio
+    pause 1.2
     $ hablar(yo,"yo Neutro","Eh, que suena?",True)
     "Te acercas a la mesa donde hay varios objetos"
     "Un barómetro, licuadora, computadores, en fin varios objetos curiosos"
@@ -28,8 +28,9 @@ label cap2:
     "Lo que suena es la radio , alguien está llamando o enviando un mensaje"
     $ hablar(yo,"yo Susto","Como se contesta esta cosa!")
     "Logras contestar la radio al fin"
+    stop sound
     $ hablar(doc, "doc Neutro", "Hey, te encuentras bien? según mis calculos deberias estar en la caseta")
-    $ hablar(doc, "doc Neutro", "La caseta a la que envié este mensaje",True)
+    $ hablar(doc, "doc Neutro", "La caseta a la que envio este mensaje",True)
     $ hablar(doc, "doc Neutro", "Tengo este complejo de centros de investigación en este desierto, una larga historia",True)
     $ hablar(doc, "doc WTF", "Pero a lo que veniamos!, escucha hay objetos en la caseta, abastecete con lo que sea util")
     $ hablar(doc, "doc WTF", "Y luego nos vemos en la ubicación en la que dispararé una bengala, cuando el sol baje, a las 20PM !",True)
@@ -38,8 +39,7 @@ label cap2:
     $ hablar(yo,"yo Ok","Oye, pero.. como se que tengo que llevar?")
     $ hablar(yo,"yo Neutro","No tengo idea de tu plan",True)
     $ hablar(doc, "doc Neutro", "Vale necesito que traigas la licuadora, que traigas tambien 2 baterias de..")
-    
-    stop music fadeout 0.5
+    stop music fadeout 1.0
     scene casetaTormenta with fade
     "En ese instante un viento muy fuerte derriba la antena receptora de tu caseta"
     $ hablar(yo,"yo Susto","Maldicion, vale recogeré lo que considere util y esperaré la señal a la noche")
@@ -50,12 +50,14 @@ label cap2:
     
     "Es momento, ya casi las 20 Pm"
     "Te asomas a la ventana"
+    pause 0.5
+    
     $ renpy.movie_cutscene("video/bengala.ogv")
-
+    play music desierto1 fadein 0.5
     "Ubicas la bengala, esta bastante cerca así que comienzas inmediatamente a viajar"
     scene black with fade
     "Sales de la caseta, el ambiente está empezando a helarse"
-    "Un rato caminarás hacia la señal"
+    "Caminas por unos minutos hacia la señal"
     scene exteriorDesierto1 with fade
     $ hablar(doc, "doc Happy", "Bien hecho!")
     $ hablar(doc, "doc Neutro", "Vale, se me olvido mencionarte que si no ajustamos correctamente los parámetros de viaje..",True)
@@ -74,7 +76,7 @@ label cap2:
     "Caminan otra hora mas y llegan a un lugar como una mini-fortaleza en el desierto"
     $ hablar(doc, "doc Happy", "Vale, ahora si podemos descansar, mañana te explicaré el plan")
     $ hablar(doc, "doc Happy", "O mejor dicho, mas tarde.")
-    $ hablar(yo,"yo Ok","Oye, como podemos estár tan seguros en este lugar?")
+    $ hablar(yo,"yo Ok","Oye, como podemos saber que estamos seguros en este lugar?")
     $ hablar(doc, "doc Neutro", "Esta fortaleza tiene un sistema de ocultamiento, jamas nos hayaran a menos que pasen por aquí exactamente")
     $ hablar(doc, "doc Happy", "En este desierto de 5 millones de kilometros cuadrados jaja",True)
     $ hablar(doc, "doc Neutro", "Ademas, a diferencia de cuando estabamos en la ciudad, no hemos causado multiples portales a otras dimensiones",True)
@@ -83,20 +85,18 @@ label cap2:
     play music fortaleza fadein 0.5
 
     scene black with fade
-    "Entran a la fortaleza y duermen en literas"
-    "El doctor Emmet enciende el sistema de ocultamiento"
-    pause 0.5
+    "Entran a la fortaleza y duermen en las comodas literas"
+    "El doctor Emmet enciende el sistema de ocultamiento de la fortaleza"
     play music tenso1 fadein 0.5
-    ###Musica tensa pero no tanto
     "Sin embargo algo te despierta en la noche"
     "Ves por la ventana y la escena es terrible, hay un escuadron de criaturas a pocos metros de la fortaleza"
     $ hablar(yo,"yo Susto","Doctor Emmet, donde estás?",True)
     "Susurras para no llamar atencion al exterior"
     "El doctor Emmet no está en la litera"
     "Alguien te habla desde la oscuridad"
-    $ hablar(doc, "doc MUYsorprendido", "Oye! rapido ven salgamos por acá no es seguro mi detector me señalo presencia de criaturas!",True)
+    $ hablar(doc, "doc MUYsorprendido", "Oye! rapido ven salgamos por acá, no es seguro aquí, mi detector me señaló presencia de criaturas!",True)
     $ hablar(doc, "doc MUYsorprendido", "Están directamente afuera de esta fortaleza!",True)
-    $ hablar(doc, "doc MUYsorprendidoF", "No enciendas la luces, corremos el riesgo que nos descubran!",True)
+    $ hablar(doc, "doc MUYsorprendido", "No enciendas la luces, corremos el riesgo que nos descubran!",True)
     $ hablar(doc, "doc MUYsorprendido", "Ven sigueme!",True)
     "Sigues al doc hasta una sala aislada"
 
@@ -104,12 +104,12 @@ label cap2:
     scene salaPlan with fade
     $ hablar(doc, "doc WTF", "Ya que no podemos salir ahora, saldremos en cuanto sea apenas seguro!")
     $ hablar(doc, "doc WTF", "Por ahora discutiremos el plan",True)
-    "Emmet te explica porque deben llegar a un punto de convergencia universal, que está en el desierto"
-    "Tiene las coordenadas de alguna forma y la hora y fecha exacta en la que habra una gran canalización de energia"
+    "Emmet te explica porqué deben llegar a un punto de convergencia universal, que está en este desierto"
+    "Tiene las coordenadas y la hora y fecha exacta en la que habra una gran canalización de energia"
     "Es en 12 horas exactas a partir de este momento"
     $ hablar(doc, "doc Neutro", "Y ese es el plan, debemos estar ahí!")
     "El doc va a mirar por un periscopio al exterior"
-    $ hablar(doc, "doc Neutro", "Vale!, es seguro salir salgamos ahora antes que sea imposible")
+    $ hablar(doc, "doc Neutro", "Vale!, es seguro salir, salgamos ahora antes que sea imposible")
     $ hablar(yo,"yo Bien","Si, tienes razón quien sabe cuando podrian volver")
     $ hablar(doc, "doc Neutro", "Vamos, no hay tiempo!")
 
@@ -119,7 +119,7 @@ label cap2:
     "Tu y el doctor Emmet salen de la mini-fortaleza y se adentran al campo abierto"
     "Pasado un rato llegan a un punto donde los caminos se separan"
     "Justo al medio hay una caseta de investigación"
-    "El doc te señala que te quedes en la caseta en sigilo, el tomara uno de los caminos a comprobar su mapa digital, que esta tomando mal las lecturas"
+    "El doc te señala que te quedes en la caseta en sigilo, el tomara uno de los caminos a comprobarlo con su mapa digital"
 
     play music desierto1 fadein 0.5
     scene casetaAlt1 with fade
@@ -131,7 +131,7 @@ label cap2:
     $ hablar(doc, "doc Neutro", "El tema es que si logramos restablecer el orden derrotando a, digamos nuestro nemesis")
     $ hablar(doc, "doc Neutro", "Debemos volver a nuestras dimensiones y destruir los aparatos!",True)
     $ hablar(doc, "doc Neutro", "No podemos dejarlos existir, y mucho menos usarlos para beneficio propio!")
-    play music tenso1 fadein 0.5
+
     "Piensas sobre lo de destruir los aparatos"
     "Podrias sacar mucho beneficio si te quedaras con alguno de ellos"
     "Quiza podrias solucionar los problemas de tu mundo"
@@ -161,7 +161,7 @@ label cap2:
             else:
                 $ Ayudar=True
     $ hablar(doc, "doc Neutro", "Vale, es hora de movernos!")
-    $ hablar(doc, "doc Neutro", "Necesito que salgas y tomes el camino marcado, no encontraremos mas adelante",True) 
+    $ hablar(doc, "doc Neutro", "Necesito que salgas y tomes el camino marcado, nos encontraremos mas adelante",True) 
 
     scene black with fade
     "Sales de la caseta y vas por el camino señalado"
@@ -178,6 +178,7 @@ label cap2:
     "No entiendes nada pero quieres irte pronto"
 
     $ hablar(doc, "doc WTF", "Espero hayas entendido la explicación, no podemos salvar los mundos si no conocermos la historia y porque luchamos!")
+    "Entiendes bastante poco o nada la verdad!"
     menu entenderHistoria:
         "Le dices la verdad o no?"
         "La verdad, no entendí muy bien y me interesa saber bien sobre esto.":
@@ -195,10 +196,10 @@ label cap2:
                 "Al principio de todo esto estabas algo indeciso"
                 "Pero ahora si quieres ayudar a ti al doc y al resto de personas"
                 "Es momento de salvar la sociedad y los mundos!"
-                $ hablar(yo,"yo Bien","Quiero salvar los mundos y reparar el mio! asi que cuentame la historia doc!")
+                $ hablar(yo,"yo Bien","Ahora quiero salvar los mundos y reparar el mio! asi que cuentame la historia doc!")
             "Al parecer todo tambien tiene una relación con los problemas de tu mundo!"
 
-            play music heroico1 fadein 0.5
+            
             $ hablar(doc, "doc Happy", "Ok, supuse que no habias entendido nada, asi que te explicare mas facil todo")
             $ hablar(doc, "doc Neutro", "Verás, supongamos que mm nose como llamarlo esta criatura que robo mi invento",True)
             $ hablar(doc, "doc Neutro", "Esta criatura se ha vuelto poderosa, un verdadero maestro de los Vórtices dimensionales!")
@@ -207,14 +208,14 @@ label cap2:
             $ hablar(doc, "doc Neutro", "En tu mundo ha alterado las mentes de los habitantes para ser indiferentes")
             $ hablar(doc, "doc Neutro", "Ha causado desbalance en la sociedad y economia!",True)
             $ hablar(doc, "doc Neutro", "Desajuste de oferta-demanda")
-            $ hablar(doc, "doc Neutro", "Centeralización y falta de apoyo a pymes!",True)
+            $ hablar(doc, "doc WTF", "Centralización y falta de apoyo a pymes!",True)
             $ hablar(doc, "doc Neutro", "Ha incentivazo malas inversiones estatales y corrupción!",True)
-            $ hablar(doc, "doc Neutro", "Todo esto deteriorando la salud mental y llevando a un ciclo sin fin",True)
+            $ hablar(doc, "doc Neutro", "Todo esto deteriorando la salud mental-fisica de los habitantes y llevando a un ciclo sin fin",True)
             $ hablar(doc, "doc Neutro", "Donde solo los mas fuertes sobreviven y el resto es ignorado!")
             $ hablar(doc, "doc WTF", "Puede parecer exagerado pero así funciona esto!")
             $ hablar(doc, "doc WTF", "Esta bestia de alimenta de ese caos literalmente, sin el no puede vivir",True)
-            $ hablar(doc, "doc WTF", "Y para obtener mas poder, simplemente viaja de dimensión en dimension controlando a los habitantes")
-            $ hablar(doc, "doc WTF", "Y si no se rinden, acaba con esos mundos!",True)
+            $ hablar(doc, "doc WTF", "Y respecto a su poder, simplemente viaja de dimensión en dimension controlando a los habitantes")
+            $ hablar(doc, "doc WTF", "Y si no se rinden, acaba con esos mundos devorandolos!",True)
             $ hablar(doc, "doc WTF", "Debemos acabar con El Maestro del Vórtice!")
 
             if preayudar and Ayudar:
@@ -256,6 +257,7 @@ label cap2:
                 $ hablar(doc, "doc Neutro", "Son de una categoria buena, se que les puedes dar un buen uso!")
 
             elif not preayudar and Ayudar:
+                play music heroico1 fadein 0.5
                 $ hablar(yo,"yo Bien","Estoy convencido de mi razón, debemos acabar con esto de raíz")
                 $ hablar(yo,"yo Bien","Vamos a ello!")
                 $ Equipamiento3=True
@@ -269,7 +271,7 @@ label cap2:
                 $ hablar(doc, "doc Neutro", "Me he dado cuenta que eres alguien que a pesar de que en un inicio se mostro algo")
                 $ hablar(doc, "doc Neutro", "Algo indeciso y con miedo talvez")
                 $ hablar(doc, "doc Neutro", "Te has convertido en poco tiempo en alguien valiente y dispuesto a ayudar")
-                $ hablar(doc, "doc Neutro", "Tomas mis mejores objetos y equipamiento, te servirán para enfrentarnos a lo que viene!")
+                $ hablar(doc, "doc Neutro", "Toma! mis mejores objetos y equipamiento, te servirán para enfrentarnos a lo que viene!")
             define comprend=True
 
         "Si, perfecto lo comprendo de pies a cabeza, vamos a ello!":
@@ -281,10 +283,10 @@ label cap2:
                 $ hablar(yo,"yo Bien","Vale! debemos acabar con esto rapido supongo no?")
                 $ hablar(yo,"yo Bien","Pero estoy aquí para ayudar de todos modos!",True)
                 $ Equipamiento1=True
-                "El doc tiene confianza en que ayudaras a derrotar al Maestro del Vórtice"
+                "El doc tiene confianza en que ayudaras a derrotar al Maestro del Vórtice, asi lo llama"
                 "Aunque sabe que estas algo indeciso!"
-                "Tambien sabe que no te interesa la historia ni tampoco ayudar demasiado a los demas"
-                "Aunque lo hayas ayudado antes, todo demuestra que solo quieres irte rapido"
+                "Tambien sospecha que no te interesa tampoco ayudar demasiado a los demas"
+                "Aunque lo hayas ayudado antes, este momento clave todo demuestra que solo quieres irte rapido!"
                 "O que eres un apresurado simplemente!"
                 "Pero tu no sabes lo que el piensa de todos modos"
                 "En base a lo que piensa el doc de ti te dará equipamiento para derrotar a tus proximos enemigos"
@@ -341,11 +343,14 @@ label cap2:
                 
 
 
-    $ hablar(yo,"yo Bien","Y ahora?")
+
+    
     if comprend and not preayudar and Ayudar:
         play music heroico1 fadein 0.5
+        $ hablar(yo,"yo Magnate","Gracias doc! Y ahora?")
     else:
         play music peligro1 fadein 2.0 volume 0.3
+        $ hablar(yo,"yo Bien","Gracias doc! Y ahora?")
 
     scene exteriorDesierto3Deform with fade
     "Derrepente, se comienza a deformar el espacio nuevamente, aparece un portal similar a los que has visto!"
@@ -353,6 +358,11 @@ label cap2:
     $ hablar(doc, "doc Neutro", "Mira! el portal se ha abierto vamos dentro!")
     $ hablar(doc, "doc Neutro", "El Maestro del Vórtice se encuentra dentro, lo deduje hace unos dias!")
     $ hablar(doc, "doc Neutro", "Rapido!")
+    
+    scene viajeportal with fade
+    "Entras al portal"
+    "Sientes como se deforma el espacio-tiempo alrededor tuyo, puedes escucharlo literalmente"
+    "Pero la sensación de este portal es distinta"
     jump cap3
 
     

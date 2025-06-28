@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/personajes.rpy", line 31: invalid syntax
-    define mute=False
-            ^
+File "game/escenarios.rpy", line 34: invalid syntax
+    ("video/portalDesierto3.webm",loop=True, size=(1280, 720))
+                                       ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jun 27 02:02:50 2025
+Fri Jun 27 20:02:51 2025
