@@ -23,11 +23,11 @@ image Maestro Mal="personajes/maestro.png"
 
 define yo = Character("Yo", color="FFA500", who_bold=True)
 define docn="???"
-define maestrOO="???"
+define maestrO="???"
 define doc = Character("[docn]", color="09e5ff", dynamic=True)
 define asaltante = Character("asaltante", color="fcf43e")
 define CriaturaCorrupta = Character("[CriaturaCorruptaN]", color="ff8700", dynamic=True)
-define maestro=Character("[maestrOO]", color="e30000", dynamic=True)
+define maestro=Character("[maestrO]", color="e30000", dynamic=True)
 
 init python:
     def hablar(personaje, foto, texto,mute=False):

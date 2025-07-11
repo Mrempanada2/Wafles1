@@ -33,7 +33,7 @@ label prologo:
     scene black
     $ renpy.movie_cutscene(videoExplosion, stop_music=True)
 
-    scene goku
+    scene black
     play sound shock1
     "La tele revienta estrepitosamente"
     "Estaba vieja de todos modos así que te da lo mismo"

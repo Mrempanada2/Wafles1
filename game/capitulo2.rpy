@@ -133,15 +133,15 @@ label cap2:
     $ hablar(doc, "doc Neutro", "No podemos dejarlos existir, y mucho menos usarlos para beneficio propio!")
 
     "Piensas sobre lo de destruir los aparatos"
-    "Podrias sacar mucho beneficio si te quedaras con alguno de ellos"
+    "Podrias sacar mucho beneficio si te quedaras con alguno de ellos, pero esto suena mal de este modo"
+    "Deberías usarlos para bien"
     "Quiza podrias solucionar los problemas de tu mundo"
-    "Problemas sociales como la desigualdad podrian ser erradicados facilmente, controlando la mente de las personas"
-    "Para bien obvio"
+    "Problemas sociales como la desigualdad podrian ser erradicados facilmente, controlando la forma de pensar de las personas"
+    "Para bien obvio, de modo que hubieran leyes que impulsen al bien común por ejemplo"
     "Podrias hasta ajustar el nivel de oferta y demanda, evitar la centralización para que pudieras obtener empleo"
     "Y tambien arreglar los problemas de corrupción, cambiando la forma de pensar primitiva de algunos lideres"
-    "Algo raro pasa, te duele la cabeza"
-    "..."
-    "Algo te dice en tu mente de la nada, que podrias hacerte rico incluso"
+    "Sin embargo tener un aparato asi puede ser peligroso de cierto modo"
+
 
     menu destruirAparatos:
         "Prometes destruir los aparatos una vez finalizada la misión?"
@@ -166,7 +166,6 @@ label cap2:
     scene black with fade
     "Sales de la caseta y vas por el camino señalado"
 
-    play music desierto1 fadein 0.5
     scene exteriorDesierto3
     "Te encuentras con el doc mas adelante"
     $ hablar(doc, "doc Neutro", "Perfecto, estamos por llegar al lugar de convergencia, deberia mostrar señales de energia en 1 hora")
@@ -208,11 +207,11 @@ label cap2:
             $ hablar(doc, "doc Neutro", "En tu mundo ha alterado las mentes de los habitantes para ser indiferentes")
             $ hablar(doc, "doc Neutro", "Ha causado desbalance en la sociedad y economia!",True)
             $ hablar(doc, "doc Neutro", "Desajuste de oferta-demanda")
-            $ hablar(doc, "doc WTF", "Centralización y falta de apoyo a pymes!",True)
-            $ hablar(doc, "doc Neutro", "Ha incentivazo malas inversiones estatales y corrupción!",True)
+            $ hablar(doc, "doc WTF", "Centralización, mala administración de recursos y entre otros",True)
+            $ hablar(doc, "doc Neutro", "Ha incentivado malas inversiones estatales y corrupción!",True)
             $ hablar(doc, "doc Neutro", "Todo esto deteriorando la salud mental-fisica de los habitantes y llevando a un ciclo sin fin",True)
             $ hablar(doc, "doc Neutro", "Donde solo los mas fuertes sobreviven y el resto es ignorado!")
-            $ hablar(doc, "doc WTF", "Puede parecer exagerado pero así funciona esto!")
+            $ hablar(doc, "doc WTF", "Puede parecer exagerado pero así funciona esto!",True)
             $ hablar(doc, "doc WTF", "Esta bestia de alimenta de ese caos literalmente, sin el no puede vivir",True)
             $ hablar(doc, "doc WTF", "Y respecto a su poder, simplemente viaja de dimensión en dimension controlando a los habitantes")
             $ hablar(doc, "doc WTF", "Y si no se rinden, acaba con esos mundos devorandolos!",True)

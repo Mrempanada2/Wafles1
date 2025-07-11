@@ -36,9 +36,9 @@ image salaPlan=Movie(play="video/salaPlan.webm",loop=True, size=(1280, 720))
 image casetaAlt1=Movie(play="video/casetaAlt.webm",loop=True, size=(1280, 720))
 
 #cap3
-image infierno1="images/inferno1.png"
-image infierno2=Movie(play="video/inferno2.webm", loop=True, size=(1280, 720))
-image infierno3="images/inferno3.png"
+image infierno1="images/inferno1.jpg"
+image infierno2="images/inferno2.jpg"
+image infierno3="images/inferno3.jpg"
 
 image equipo0="images/cuchillo.png"
 image equipo1="images/Magnum.png"

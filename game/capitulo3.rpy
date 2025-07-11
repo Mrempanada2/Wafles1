@@ -1,6 +1,6 @@
 
 label cap3:
-    play music tenso1 fadein 1.0
+    play music tenso1 fadein 1.0 volume 0.8
     scene infierno1 with fade
 
     if saltoPrematuro:
@@ -31,28 +31,32 @@ label cap3:
     $ hablar(doc, "doc Neutro", "Así es, ya estamos aquí")
     
     if Equipamiento3:
+        play music combate4 volume 0.3
         show equipo3
         "Es hora de ponerle fin a esto!"
         "Ya no tienes miedo ni duda"
     elif Equipamiento0:
+        play music combate11 volume 0.5
         show equipo0
         "Piensas en como podrías defenderte la verdad"
         "Pero no le pedirás mejores cosas al doc"
         "Al fin y al cabo has sido algo idiota!, es imposible que te confie algo mejor"
     elif Equipamiento1:
+        play music combate2 volume 0.5
         show equipo1
         "Estas algo asustado"
     elif Equipamiento2:
+        play music combate3 volume 0.5
         show equipo2
         "Tu desición es muy firme, siempre ha sido así"
     $ hablar(doc, "doc WTF", "Ves esa estructura del fondo?")
     $ hablar(doc, "doc Neutro", "Ahí se oculta el maestro del Vórtice",True)
     "Empiezan a moverse hacia el lugar"
     "Con un patin volador hecho de materiales raros como.. licuadoras?"
-    stop music fadeout 0.6
     scene infierno2 with fade
+
     if Equipamiento0:
-        play music combate1 fadein 0.5
+        show equipo0
         "Apenas van llegando a la entrada y los están esperando criaturas peligrosas"
         "Al parecer defienden al Maestro del Vórtice"
         "Y los acaban de ver a ustedes!"
@@ -68,6 +72,7 @@ label cap3:
         $ hablar(yo,"yo Ok","Gracias doc")
         $ hablar(doc, "doc WTF", "Vale vamos dentro")
         scene infierno3 with fade
+        show equipo0
         "Apenas van entrando y.."
         play sound rugidoA
         "Desde arriba, cae una criatura horrible"
@@ -83,6 +88,7 @@ label cap3:
         $ hablar(maestro,"Maestro Neutral","Era parte de mi trampa atraerlos hasta acá!",True)
         $ hablar(doc, "doc WTF", "Hablas demasiado!")
         "En eso el doc saca un lanzamisiles y le dispara al monstruo!"
+        play sound explosion
         "El misil lo impacta "
         "Pero el monstruo emerge del humo!"
         "Idiotas!"
@@ -123,6 +129,7 @@ label cap3:
         $ hablar(doc, "doc WTF", "Sin embargo",True)
         $ hablar(doc, "doc WTF", "Se que no vas a destruir los aparatos que has obtenido o me equivoco?")
         "Asientes con la cabeza"
+        hide equipo0
         $ hablar(yo,"yo Neutro","N- No puedo doc ")
         $ hablar(yo,"yo Neutro","Estos objetos me servirian mucho en mi mundo",True)
         $ hablar(yo,"yo Neutro","Hablo de usarlos para bien!",True)
@@ -131,20 +138,23 @@ label cap3:
         $ hablar(doc, "doc WTF", "Devolverte al pasado! y borrarte la memoria de lo sucedido!",True)
         $ hablar(doc, "doc WTF", "Con algo de suerte nunca llegarás a este mundo, no te lo tomes personal, es lo mejor para las dimensiones",True)
         $ hablar(doc, "doc WTF", "Y tambien para tí amigo!",True)
-        $ hablar(doc, "doc WTF", "No puedo obligarte a destruir los objetos usando la fuerza contra tí, tengo un lema que me impide dañar a mis amigos!")
+        $ hablar(yo,"yo Neutro","Creo estuve algo equivocado todo este tiempo, y talvez debía haber pensado en los demas y no solo en mi")
+        $ hablar(doc, "doc Neutro", "Y si, tienes algo de razon pero de todos modos debo devolverte a tu dimension sin recuerdos")
+        $ hablar(doc, "doc Neutro", "No vaya a ser que uses lo que has aprendido para mal y para convertirte en un nuevo enemigo oculto de la sociedad!")
         $ hablar(doc, "doc Happy", "Hasta la vista.")
+        stop music fadeout 0.5
         scene viajeportal with fade 
         "El doc te dispara con algo que te convierte a forma no fisica, estas en un portal"
         "Pero sientes como si olvidaras todo"
-        "Estás viajando al pasado?"
-        jump prologo
-
-
-
-
+        play music musicaAldea1 fadein 0.5 volume 0.8
+        scene black
+        "Al final nunca llegas a ese mundo en esta nueva linea temporal, pero tratarás de hacer lo mejor con lo que tengas a mano para mejorar todo"
+        "Porque al parecer si recuerdas algo de lo vivido, lo tienes en tu conciencia"
+        "Fin"
+        return
 
     elif Equipamiento1:
-        play music combate2 fadein 0.5
+        show equipo1
         "Apenas van llegando a la entrada y los están esperando criaturas peligrosas"
         "Al parecer defienden al Maestro del Vórtice"
         "Los acaban de detectar a ti y al doc!"
@@ -156,6 +166,8 @@ label cap3:
         $ hablar(doc, "doc WTF", "Bien hecho!")
         $ hablar(doc, "doc WTF", "Vale vamos dentro, rapido!")
         scene infierno3 with fade
+        show equipo1
+        play music combate1 fadein 0.5 volume 0.5
         "Apenas van entrando cuando de pronto.."
         play sound rugidoA
         "Desde arriba, cae una criatura horrible"
@@ -185,6 +197,7 @@ label cap3:
         $ hablar(yo,"yo Susto","Y que haremos!")
         $ hablar(doc, "doc WTF", "Trataremos de aguantar lo que podamos hasta recuperarnos, tengo algunos objetos que nos serviran para sanarnos!",True)
         $ hablar(yo,"yo Neutro","Pues tendremos que aguantar aquí el tiempo necesario doc.")
+        hide equipo1
         "Luego de esconderse un tiempo de los enemigos que llegaron a ver el cadaver de su maestro"
         "Empiezan a notar que, el aparato de portales se vuelve mas estable"
         $ hablar(doc, "doc Neutro", "Hey! ven a ver esto")
@@ -198,6 +211,7 @@ label cap3:
         $ hablar(yo,"yo Bien","Tal vez nos volvamos a encontrar en el futuro!")
         $ hablar(doc, "doc Happy", "...O en el pasado")
         "En eso el doc abre 2 portales, y cada uno se va a su dimension"
+        stop music fadeout 1.0
         scene viajeportal with fade
         "Viajas a tu casa, y el doc? quien sabe donde ira ahora.."
         "..."
@@ -210,7 +224,7 @@ label cap3:
         return
         
     elif Equipamiento2:
-        play music combate3 fadein 0.5
+        show equipo2
         "Apenas van llegando a la entrada y los están esperando criaturas peligrosas"
         "Al parecer defienden al Maestro del Vórtice"
         "Ya los vieron!"
@@ -225,6 +239,7 @@ label cap3:
         $ hablar(doc, "doc Happy", "Perfecto! vamos dentro")
         $ hablar(yo,"yo Bien","Gracias doc, vale vamos con cuidado!")
         scene infierno3 with fade
+        play music combate2 fadein 0.5 volume 0.5
         "Apenas van entrando cuando de pronto.."
         play sound rugidoA
         "Desde arriba, cae una criatura horrible"
@@ -268,12 +283,14 @@ label cap3:
 
         $ hablar(doc, "doc Happy", "Bien hecho!")
         $ hablar(yo,"yo Magnate","Siii")
+        hide equipo2
         "El doc y tu alzan los brazos en señal de victoria y celebran gritando al aire"
         $ hablar(doc, "doc Happy", "Fue un gusto conocerte amigo")
         $ hablar(yo,"yo Bien","Gracias doc! tambien fue un gusto y sin duda aprendi bastante")
         $ hablar(yo,"yo Bien","Tal vez nos volvamos a encontrar en el futuro!")
         $ hablar(doc, "doc Happy", "...O en el pasado")
         "En eso el doc abre 2 portales, y cada uno se va a su dimension"
+        stop music fadeout 0.5
         scene viajeportal with fade
         "Viajas a tu casa, y el doc? quien sabe donde ira ahora.."
         "..."
@@ -286,10 +303,21 @@ label cap3:
         return
 
     elif Equipamiento3:
-        play music combate3 fadein 0.5
+        hide equipo3
+        scene infierno2 with fade
         "Apenas van llegando a la entrada y los están esperando criaturas peligrosas"
         "Al parecer defienden al Maestro del Vórtice"
+        $ hablar(CriaturaCorrupta,"monstruo dos", "Sonidos de enojo*",)
+        "Actuas rapido y atacas primero"
+        play sound disparos3
+        $ hablar(yo,"yo Magnate","Toma esto!")
+        play sound disparos3
+        pause 0.2
+        play sound explosion
+        "La criatura estalla"
+        "Ahora es momento de entrar a la guarida"
 
+        play music combate3 fadein 0.5 volume 0.5
         scene infierno3 with fade
         play sound explosion
         "Vuelan la pared de la guarida a cohetes!"
@@ -303,38 +331,51 @@ label cap3:
         $ hablar(doc, "doc WTF", "JAJA")
 
         $ hablar(maestro,"Maestro Neutral","Esta bien acabaré con ustedes de todas formas!!")
+        show equipo3
         $ hablar(maestro,"Maestro Neutral","TOMEN ESTO!",True)
         "El monstruo alza sus puños sobre ustedes"
         "El doc y tu dicen"
         "HABLAS DEMASIADO!"
+        play sound disparos3
         "Le disparan con todo lo que tienen!"
+        
+        pause 0.3
+        play sound disparo2
+        pause 0.2
+        play sound explosion
+
         "Pero el doc es acorralado por el monstruo!"
         $ hablar(maestro,"Maestro Neutral","Despidete de todo lo que conoces Emmet!")
         $ hablar(yo,"yo Susto","No en mi guardia!")
         play sound disparos3
         "Le disparas a la espalda del monstruo"
-        "El doc aprovechando la situacion, se mueve por debajo del monstruo "
+        "El doc aprovechando la situacion, Doc se mueve por debajo del monstruo "
         play sound explosion
         "Una vez al otro lado le dispara al monstruo que estaba algo aturdido!"
         $ hablar(maestro,"Maestro Mal","NOOO")
         "El monstruo es pulverizado al instante!"
         $ hablar(doc, "doc Happy", "Bien hecho!")
         $ hablar(yo,"yo Magnate","Siii")
+        hide equipo3
         "El doc y tu alzan los brazos en señal de victoria y celebran gritando al aire"
         $ hablar(doc, "doc Neutro", "Hey! ven a ver esto")
         $ hablar(yo,"yo Bien","que es?")
         $ hablar(doc, "doc Neutro", "El aparato de portales se estabiliza, las dimensiones vuelven a la normalidad al haber eliminador al Maestro del Vórtice")
         $ hablar(doc, "doc Happy", "Podemos usar los portales y volver con seguridad a nuestros hogares y dimensiones!")
         $ hablar(yo,"yo Bien","Pues supongo que es hora de la despedida!")
+        "El mundo se ha estabilizado y ves por el portal como se crean varias leyes para mejorar la sociedad"
+        "Tambien ves menos cosas terribles en la televisión"
+        "Sin embargo para acabar con el mal del mundo, debes actuar en el tambien!"
         
         "En eso el doc abre 1 portal"
         $ hablar(doc, "doc Happy", "Hey, estas seguro que te vas tan rapido?")
-        $ hablar(doc, "doc Happy", "Podemos quedarnos a acabar con estas criaturas antes que desaparezcan por falta de poder")
-        $ hablar(doc, "doc Happy", "Será divertido")
+        $ hablar(doc, "doc Happy", "Podemos quedarnos a acabar con estas criaturas antes que desaparezcan por completo")
+        $ hablar(doc, "doc Happy", "Será divertido!")
         menu quedarse:
             "Te quedas a aniquilar monstruos un rato?"
             "Si":
-                play music combate4 fadein 1.0
+                stop music fadeout 0.5
+                play music combate4 fadein 1.0 volume 0.6
                 scene black with fade
                 "Te quedas a aniquilar monstruos un tiempo mas"
                 "Quien sabe, talvez con actitud todos podemos ayudar a contribuir a la sociedad!"
@@ -346,6 +387,7 @@ label cap3:
                 $ hablar(yo,"yo Bien","Gracias doc! tambien fue un gusto y sin duda aprendi bastante")
                 $ hablar(yo,"yo Bien","Tal vez nos volvamos a encontrar en el futuro!")
                 $ hablar(doc, "doc Happy", "...O en el pasado")
+                stop music fadeout 0.5
                 scene viajeportal with fade
                 "Viajas a tu casa, y el doc se quedará con la diversion"
                 "La verdad de arrepientes un poco de no quedarte un rato mas!"

@@ -208,7 +208,7 @@ label aparatoRaro:
                     "Tampoco puedes ver tu cuerpo, pero parece que esto podria funcionar"
                     "Te sientes algo idiota"
                     $ saltoPrematuro=True
-                    jump origendelMal
+                    jump cap3
                 "Simplemente correr!":
                     hide aparatoRaro
                     "Sales corriendo"

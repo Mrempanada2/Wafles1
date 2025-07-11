@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/escenarios.rpy", line 34: invalid syntax
-    ("video/portalDesierto3.webm",loop=True, size=(1280, 720))
-                                       ^
+File "game/capitulo3.rpy", line 34: play requires a file
+    play combate4
+                 ^
+
+File "game/capitulo3.rpy", line 39: play requires a file
+    play combate11
+                  ^
+
+File "game/capitulo3.rpy", line 45: play requires a file
+    play combate2
+                 ^
+
+File "game/capitulo3.rpy", line 49: play requires a file
+    play combate3
+                 ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Fri Jun 27 20:02:51 2025
+Sat Jun 28 00:29:47 2025

@@ -30,7 +30,7 @@ define tenso1="audio/tenso1.mp3"
 define heroico1="audio/heorico1.mp3"
 
 #cap3
-define combate1="audio/combate11.mp3"
+define combate11="audio/combate11.mp3"
 define combate2="audio/combate2.mp3"
 define combate3="audio/combate3.mp3"
 define combate4="audio/combate4.mp3"

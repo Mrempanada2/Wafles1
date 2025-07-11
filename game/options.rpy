@@ -13,7 +13,7 @@
 ##
 ## El _() que rodea la cadena de texto la señala como traducible.
 
-define config.name = _("Proj1")
+define config.name = _("Waffles_proj")
 
 
 ## Determina si el título dado más arriba se muestra en el menú principal.
@@ -24,22 +24,22 @@ define gui.show_name = False
 
 ## Versión del juego.
 
-define config.version = "Beta 0.1"
+define config.version = "1.3"
 
 
 ## Texto situado en la pantalla 'Acerca de' del juego. Sitúa el texto entre
 ## comillas triples y deja una línea en blanco entre párrafos.
 
 define gui.about = _p("""
-Esta es una novela visual comica para tratar de concientizar acerca de algunos problemas sociales
-de una forma no demasiado seria, Samuel Muñoz
+Esta es una novela visual comica para tratar de concientizar y explicar acerca de algunos problemas sociales
+de una forma apta para todo publico y fantasiosa.
 """)
 
 
 ## Nombre breve del juego para ejecutables y directorios en la distribución.
 ## Debe contener solo carácteres ASCII, sin espacios, comas o puntos y coma.
 
-define build.name = "Proj1"
+define build.name = "Waffles_proj"
 
 
 ## Sonidos y música ############################################################
@@ -129,7 +129,7 @@ default preferences.text_cps = 0
 ## El retraso por defecto del auto-avance. Números más grandes indican esperas
 ## mayores. El rango válido es 0-30.
 
-default preferences.afm_time = 15
+default preferences.afm_time = 20
 
 
 ## Directorio de guardado ######################################################
